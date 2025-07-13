@@ -1,59 +1,85 @@
-# Embedded AI Vision Glass (EGG)
+<!-- Diğer dillere link (şimdilik sadece İngilizce var) -->
+[Read the English Version (İngilizce Versiyonu Okuyun) »](README.md)
+
+---
 
 <div align="center">
+  <!-- Proje Banner'ı (Ödüllü fotoğraf ile güncellendi) -->
+  <a href="5_Project_Documentation/Media/2_Competition_and_Awards/award-pose.jpeg">
+    <img src="5_Project_Documentation/Media/2_Competition_and_Awards/award-pose.jpeg" alt="Engelsiz Görü Gözlüğü Projesi" width="750">
+  </a>
 
-**Read in Other Languages**
+  <h1 align="center">Gömülü Yapay Zeka Görü Gözlüğü (EGG)</h1>
 
-<a href="README.md">🇺🇸 English</a> | <a href="README_tr.md">🇹🇷 Türkçe</a>
-
+  <p align="center">
+    Görme engelli bireylere yardımcı olmak amacıyla bir lise öğrencisi tarafından geliştirilen, ödüllü ve yapay zeka destekli bir akıllı gözlük projesinin portfolyo sunumudur.
+    <br />
+    <a href="#-proje-hakkında"><strong>Proje Hakkında</strong></a> ·
+    <a href="#-teknik-mimari"><strong>Teknik Mimari</strong></a> ·
+    <a href="#-proje-vitrini"><strong>Proje Vitrini</strong></a>
+  </p>
 </div>
 
+---
+
+### 🏆 Proje Hakkında
+
+**Gömülü Yapay Zeka Görü Gözlüğü (EGG)**, görme engelli bireylerin günlük hayatta karşılaştığı zorluklara çözüm üretmek amacıyla, tek bir lise öğrencisi tarafından tamamen kişisel imkanlarla tasarlanıp geliştirilmiş, ileri teknoloji bir yardımcı prototiptir.
+
+Bu proje, geleneksel yardımcı cihazların aksine, sadece engelleri tespit etmekle kalmaz, aynı zamanda kullanıcının çevresini **anlamlandırır ve betimler**. Sadece bir uyarı sesi vermek yerine, "önünde bir sandalye var" diyebilir veya bir tabeladaki yazıyı sesli olarak okuyabilir. Bu sayede, bilişsel bir "görme" yeteneği sunarak kullanıcının bağımsızlığını artırmayı hedefler.
+
+Projenin yenilikçi yapısı ve potansiyeli, katıldığı **Sivas Uluslararası Robot Yarışması**'nda **Yapay Zeka Kategorisi Üçüncülük Ödülü** alarak bağımsız bir jüri tarafından tescillenmiştir.
+
+### 📂 Proje Dosyaları
+
+Bu repo, projenin tüm yaşam döngüsünü belgeleme amacıyla beş ana bölüme ayrılmıştır:
+
+*   **[1_Hardware_Design](./1_Hardware_Design/):** Tüm Fritzing şemalarını ve fiziksel yerleşim çizimlerini içerir.
+*   **[2_Firmware](./2_Firmware/):** ESP32 Kontrol Ünitesi ve ESP32-CAM Kamera Ünitesi için yazılmış C++/Arduino kodlarını barındırır.
+*   **[3_Cloud_Backend](./3_Cloud_Backend/):** AWS Lambda fonksiyonu ve EC2 WebSocket sunucusu için hazırlanan Node.js kodlarını içerir.
+*   **[4_Mobile_Application](./4_Mobile_Application/):** Android yardımcı uygulamasının kaynak kodlarını barındırır.
+*   **[5_Project_Documentation](./5_Project_Documentation/):** Proje süresince hazırlanan tüm raporları, sunumları, görselleri ve videoları içeren geniş bir arşivdir.
+
+### 🛠️ Teknik Mimari
+
+EGG projesi, üç katmanlı bir mimariye sahip tam kapsamlı bir IoT çözümüdür.
+
 <p align="center">
-  <img src="5_Project_Documentation/Media/1_Prototyping_and_Assembly/gozluk-kafada-takili-onden.png" width="650">
+  <a href="1_Hardware_Design/gozluk-sema-noted.jpg"><img src="1_Hardware_Design/gozluk-sema-noted.jpg" alt="Açıklamalı Devre Şeması" width="100%"></a>
+  <br>
+  <em>Notlu şemanın tamamını görmek için resme tıklayın.</em>
 </p>
 
-| **Project Summary** |
-| :---: |
-| This project documents the journey of a high school student who single-handedly designed, built, and coded an AI-powered smart glass prototype from scratch, using personal funds. The "Embedded AI Vision Glass" (EGG) is an award-winning assistive device created to enhance the independence of visually impaired individuals by interpreting their environment. It transforms the abstract concept of sight into tangible information through object recognition, text-to-speech, and live translation, proving that complex, impactful technology can be developed with passion and resourcefulness. |
+*   **Donanım ve Gömülü Yazılım:** Görevleri verimli bir şekilde dağıtan **Çift Mikrodenetleyicili (ESP-WROOM-32 + ESP32-CAM)** bir mimariye sahiptir. Ana kontrolcü arayüz ve Bluetooth'u yönetirken, özel işlemci kamera ve Wi-Fi görevlerini üstlenir. İki işlemci UART üzerinden haberleşir.
 
-This repository serves as a comprehensive technical archive for the EGG project, detailing its entire lifecycle from initial concept to a competition-winning prototype. It is designed as both a portfolio showcase and a reference for those interested in embedded systems, IoT, and applied AI.
+*   **Sunucu Altyapısı (Bulut):** Maliyeti ve cihaz üzerindeki yükü en aza indirmek için **AWS (Amazon Web Services)** üzerinde "sunucusuz" (serverless) bir mimari kullanılmıştır. Tüm ağır yapay zeka işlemleri (**AWS Textract** ile Metin Okuma, **AWS Rekognition** ile Nesne/Yüz/Para Tanıma) bulutta yapılır.
 
-**Disclaimer:** The information and code in this repository are provided for demonstration purposes only. This is a personal project and not a commercial product. The source code is not open-source, and all rights are reserved.
+*   **Mobil Uygulama (Android):** Gözlüğü kontrol etmek ve sonuçları sesli olarak almak için geliştirilmiş bir arayüzdür. Bluetooth ve internet üzerinden gözlükle ve sunucuyla sürekli iletişim halindedir.
 
----
+### 🌟 Temel Yetenekler
 
-## Project Outline
+*   **Metin Analizi (OCR):** Doküman ve tabelalardaki metinleri okur.
+*   **Canlı Metin Çevirisi:** Yabancı metinleri çevirir ve seslendirir.
+*   **Ortam Betimleme:** Çevredeki nesneleri tanır ve kullanıcıya raporlar.
+*   **Çift Kontrol Sistemi:** Hem gözlük üzerindeki dokunmatik yüzeyler hem de mobil uygulama üzerinden sesli komutlarla kontrol.
+*   **Ek Modlar:** Canlı Video Yayını (WebSocket) ve FTP Sunucu Modu (Kablosuz dosya erişimi).
+*   **Yardımcı Özellikler:** Entegre Bluetooth kulaklık ve sesle aktive edilen yüksek yoğunluklu LED fener.
 
-This project chronicles the creation of the EGG in 5 main chapters:
+### 🖼️ Proje Vitrini: Fikirden Ödüle Yolculuk
 
-### **[Chapter I: The Idea and The "Why"](5_Project_Documentation/1_The_Idea_and_The_Why.md)**
-This chapter details the motivation behind the project: to create a multi-functional assistive device that goes beyond simple obstacle detection, offering a true cognitive "sight" experience for the visually impaired. It analyzes the shortcomings of existing solutions and sets the vision for the EGG.
+Bu proje, bir fikrin somut bir prototipe ve ardından ödüllü bir çalışmaya dönüşme hikayesidir.
 
-### **[Chapter II: Hardware Architecture & Assembly](5_Project_Documentation/2_Hardware_Architecture.md)**
-A deep dive into the hardware decisions and the hands-on assembly process. This section covers:
-*   The **Dual-MCU Architecture** (ESP32 + ESP32-CAM) and why this choice was critical for performance.
-*   **Power Management System** design, including the TP4056 charging circuit, 18650 battery, and the stabilized 5V step-up converter.
-*   **Hardware-level modifications**, such as the "BT Headset Hacking" to integrate a high-quality audio system.
-*   **Custom-built components** like the capacitive touchpads.
-
-### **[Chapter III: The Software Ecosystem](5_Project_Documentation/3_Software_Ecosystem.md)**
-This chapter explains the three-tiered software structure that brings the glasses to life:
-*   **Firmware:** The C++ code running on the dual ESP32s, managing tasks, user input, and communication.
-*   **Cloud Backend:** The serverless architecture on AWS, using Lambda, API Gateway, S3, Textract, and Rekognition for all AI-heavy processing.
-*   **Mobile Application:** The Android app that acts as the command center and user-feedback interface.
-
-### **[Chapter IV: Capabilities and Live Demos](5_Project_Documentation/4_Capabilities_and_Demos.md)**
-A showcase of what the EGG can do. This section provides details and media for key functions:
-*   **AI-Powered Vision:** Text Recognition (OCR), Live Translation, Object Detection, and more.
-*   **User Interface:** How the dynamic touch-based command system works.
-*   **Connectivity Modes:** FTP Server for file access and WebSocket Live Streaming.
-*   **Assistive Features:** The integrated Bluetooth headset and voice-activated flashlight.
-
-### **[Chapter V: Competitions, Challenges, and Learnings](5_Project_Documentation/5_Competitions_and_Learnings.md)**
-This chapter reflects on the journey, including winning 3rd place at the Sivas International Robotics Competition, the feedback received from TEKNOFEST judges, the technical challenges overcome, and the invaluable lessons learned in engineering, project management, and perseverance.
+| 1. İlk Montaj ve "Hacking" | 2. Yarışma ve Başarı | 3. Canlı Demo |
+| :---: | :---: | :---: |
+| _"Çıplak" prototipin ilk halleri. Modifiye edilmiş bir BT kulaklık ve özel olarak kablolanmış modüllerin montajı._ | _EGG projesinin Sivas Uluslararası Robot Yarışması'nda sunulması ve kazanılan ödüller._ | _Dahili asistanın temel bir yeteneği olan sesle etkinleştirilen fener özelliğini gösteren canlı test._ |
+| <a href="5_Project_Documentation/Media/1_Prototyping_and_Assembly/esp32wroower-ic-tarafi-motor-bt-montajlanmis.png"><img src="5_Project_Documentation/Media/1_Prototyping_and_Assembly/esp32wroower-ic-tarafi-motor-bt-montajlanmis.png" width="250"></a> | <a href="5_Project_Documentation/Media/2_Competition_and_Awards/our-team-medals.jpg"><img src="5_Project_Documentation/Media/2_Competition_and_Awards/our-team-medals.jpg" width="250"></a> | <a href="5_Project_Documentation/Media/3_Demos_and_Presentations/assistant-test.mp4"><img src="5_Project_Documentation/Media/3_Demos_and_Presentations/assistant-test.mp4" width="250"></a> |
 
 ---
 
-## Acknowledgements
+### ⚖️ Telif Hakkı ve Lisans
 
-A special thanks to my teachers, family, and all stakeholders who supported and believed in this project from the very beginning.
+**© 2024, Şems YEKELER. Her Hakkı Saklıdır.**
+
+Bu projenin kaynak kodları, donanım şemaları ve diğer tüm varlıkları yalnızca portfolyo ve gösterim amacıyla sunulmuştur. Kodları eğitim amacıyla inceleyebilirsiniz, ancak yazarın açık ve yazılı izni olmaksızın kopyalamanız, değiştirmeniz, dağıtmanız veya herhangi bir şekilde kullanmanız yasaktır.
+
+**Bu proje açık kaynak değildir.**
