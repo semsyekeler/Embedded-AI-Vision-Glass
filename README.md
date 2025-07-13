@@ -9,51 +9,67 @@
 </div>
 
 <p align="center">
-  <img src="5_Project_Documentation/Media/1_Prototyping_and_Assembly/gozluk-kafada-takili-onden.png" width="650">
+  <img src="5_Project_Documentation/Media/3_Demos_and_Presentations/gozluk-kafada-takili-onden.png" alt="Embedded AI Vision Glass" width="650">
 </p>
 
 | **Project Summary** |
 | :---: |
-| This project documents the journey of a high school student who single-handedly designed, built, and coded an AI-powered smart glass prototype from scratch, using personal funds. The "Embedded AI Vision Glass" (EGG) is an award-winning assistive device created to enhance the independence of visually impaired individuals by interpreting their environment. It transforms the abstract concept of sight into tangible information through object recognition, text-to-speech, and live translation, proving that complex, impactful technology can be developed with passion and resourcefulness. |
+| This project documents the journey of a high school student who single-handedly designed, built, and coded an AI-powered smart glass prototype from scratch, using personal funds. The "Embedded AI Vision Glass" (EGG) is an award-winning assistive device created to enhance the independence of visually impaired individuals by interpreting their environment. It transforms the abstract concept of sight into tangible information through object recognition, text-to-speech, and live translation. |
 
-This repository serves as a comprehensive technical archive for the EGG project, detailing its entire lifecycle from initial concept to a competition-winning prototype. It is designed as both a portfolio showcase and a reference for those interested in embedded systems, IoT, and applied AI.
+This repository serves as a comprehensive technical archive for the EGG project, detailing its entire lifecycle. It is designed as both a portfolio showcase and a reference for those interested in embedded systems, IoT, and applied AI.
 
-**Disclaimer:** The information and code in this repository are provided for demonstration purposes only. This is a personal project and not a commercial product. The source code is not open-source, and all rights are reserved.
-
----
-
-## Project Outline
-
-This project chronicles the creation of the EGG in 5 main chapters:
-
-### **[Chapter I: The Idea and The "Why"](5_Project_Documentation/1_The_Idea_and_The_Why.md)**
-This chapter details the motivation behind the project: to create a multi-functional assistive device that goes beyond simple obstacle detection, offering a true cognitive "sight" experience for the visually impaired. It analyzes the shortcomings of existing solutions and sets the vision for the EGG.
-
-### **[Chapter II: Hardware Architecture & Assembly](5_Project_Documentation/2_Hardware_Architecture.md)**
-A deep dive into the hardware decisions and the hands-on assembly process. This section covers:
-*   The **Dual-MCU Architecture** (ESP32 + ESP32-CAM) and why this choice was critical for performance.
-*   **Power Management System** design, including the TP4056 charging circuit, 18650 battery, and the stabilized 5V step-up converter.
-*   **Hardware-level modifications**, such as the "BT Headset Hacking" to integrate a high-quality audio system.
-*   **Custom-built components** like the capacitive touchpads.
-
-### **[Chapter III: The Software Ecosystem](5_Project_Documentation/3_Software_Ecosystem.md)**
-This chapter explains the three-tiered software structure that brings the glasses to life:
-*   **Firmware:** The C++ code running on the dual ESP32s, managing tasks, user input, and communication.
-*   **Cloud Backend:** The serverless architecture on AWS, using Lambda, API Gateway, S3, Textract, and Rekognition for all AI-heavy processing.
-*   **Mobile Application:** The Android app that acts as the command center and user-feedback interface.
-
-### **[Chapter IV: Capabilities and Live Demos](5_Project_Documentation/4_Capabilities_and_Demos.md)**
-A showcase of what the EGG can do. This section provides details and media for key functions:
-*   **AI-Powered Vision:** Text Recognition (OCR), Live Translation, Object Detection, and more.
-*   **User Interface:** How the dynamic touch-based command system works.
-*   **Connectivity Modes:** FTP Server for file access and WebSocket Live Streaming.
-*   **Assistive Features:** The integrated Bluetooth headset and voice-activated flashlight.
-
-### **[Chapter V: Competitions, Challenges, and Learnings](5_Project_Documentation/5_Competitions_and_Learnings.md)**
-This chapter reflects on the journey, including winning 3rd place at the Sivas International Robotics Competition, the feedback received from TEKNOFEST judges, the technical challenges overcome, and the invaluable lessons learned in engineering, project management, and perseverance.
+**Disclaimer:** The source code and design files in this repository are provided for demonstration purposes only. All rights are reserved.
 
 ---
 
-## Acknowledgements
+## 📂 Project Structure
 
-A special thanks to my teachers, family, and all stakeholders who supported and believed in this project from the very beginning.
+This project is organized into five main sections, each documenting a different aspect of the development process:
+
+*   **[1_Hardware_Design](./1_Hardware_Design/):** Contains all schematics (Fritzing) and physical layout diagrams.
+*   **[2_Firmware](./2_Firmware/):** Includes the C++/Arduino source code for both the ESP32 Controller and the ESP32-CAM Processor.
+*   **[3_Cloud_Backend](./3_Cloud_Backend/):** Holds the Node.js source code for the AWS Lambda function and the EC2 WebSocket server.
+*   **[4_Mobile_Application](./4_Mobile_Application/):** Contains the source code for the Android companion app.
+*   **[5_Project_Documentation](./5_Project_Documentation/):** An extensive archive of all reports, presentations, and media files from the project's journey.
+
+## 🛠️ Technical Architecture
+
+The EGG project is a full-stack IoT solution built on a three-tier architecture.
+
+<p align="center">
+  <a href="1_Hardware_Design/gozluk-sema-noted.jpg"><img src="1_Hardware_Design/gozluk-sema-noted.jpg" alt="Annotated Schematic" width="100%"></a>
+  <br>
+  <em>Click to see the full annotated schematic.</em>
+</p>
+
+*   **Hardware & Embedded:** A **Dual-MCU Architecture** (ESP32-WROOM-32 + ESP32-CAM) is used to distribute tasks efficiently. The main controller handles UI and Bluetooth, while a dedicated processor manages the camera, Wi-Fi, and AI-related tasks. The two communicate via UART, overcoming the performance issues of running Wi-Fi and Bluetooth simultaneously on a single MCU.
+*   **Cloud Backend:** A serverless architecture on **AWS** performs all heavy AI processing. This includes **API Gateway** for requests, **Lambda** for logic, **S3** for storage, and AI services like **AWS Textract** (OCR) and **AWS Rekognition** (Object/Face/Currency Detection).
+*   **Mobile App (Android):** A user-friendly interface to control the glasses and receive real-time results via Bluetooth and a cloud backend. It utilizes a Text-to-Speech (TTS) engine and the Google Translate API for multilingual support.
+
+## 🌟 Key Features
+
+*   **Text Analysis (OCR):** Reads text from documents and signs.
+*   **Live Text Translation:** Translates and reads foreign text.
+*   **Scene Description:** Identifies objects in the user's surroundings.
+*   **Dual Control System:** Can be controlled via on-board capacitive touchpads or voice commands through the companion app.
+*   **Connectivity Modes:** Includes a **Live Video Streaming** mode via WebSockets and an **FTP Server Mode** for wireless access to photos on the SD card.
+*   **Assistive Features:** Integrated Bluetooth headset for audio feedback and a voice-activated high-intensity LED flashlight.
+
+## 🖼️ Project Showcase: From Idea to Award-Winning Prototype
+
+This project evolved from a simple concept to a functional prototype that was recognized in international competitions.
+
+| 1. Prototyping & Assembly | 2. Competition & Recognition | 3. Live Demonstration |
+| :---: | :---: | :---: |
+| _The "bare-metal" prototype, showing the hand-assembled components, including a modified BT headset and custom-wired modules._ | _Receiving the 3rd place award in the AI category at the Sivas International Robotics Competition._ | _A live test showcasing the voice-activated flashlight feature, a core capability of the onboard assistant._ |
+| <a href="5_Project_Documentation/Media/1_Prototyping_and_Assembly/esp32wroower-ic-tarafi-motor-bt-montajlanmis.png"><img src="5_Project_Documentation/Media/1_Prototyping_and_Assembly/esp32wroower-ic-tarafi-motor-bt-montajlanmis.png" width="250"></a> | <a href="5_Project_Documentation/Media/2_Competition_and_Awards/award-pose.jpeg"><img src="5_Project_Documentation/Media/2_Competition_and_Awards/award-pose.jpeg" width="250"></a> | <a href="5_Project_Documentation/Media/3_Demos_and_Presentations/assistant-test.mp4"><img src="5_Project_Documentation/Media/3_Demos_and_Presentations/assistant-test.mp4" width="250"></a> |
+
+---
+
+## ⚖️ Copyright and License
+
+**© 2024, [SENİN ADIN SOYADIN]. All Rights Reserved.**
+
+The source code, hardware schematics, and all other assets in this repository are provided for portfolio and demonstration purposes only. You may view the code and assets for educational purposes, but you are not permitted to copy, modify, distribute, or use them in any way, for commercial or non-commercial purposes, without explicit written permission from the author.
+
+**This project is NOT open-source.**
