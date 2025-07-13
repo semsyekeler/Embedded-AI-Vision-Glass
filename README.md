@@ -1,56 +1,57 @@
-# Embedded AI Vision Glass (EGG)
+# Gömülü Yapay Zeka Görü Gözlüğü (EGG)
 
 <div align="center">
 
-**Read in Other Languages**
+**Diğer Dillerde Oku**
 
-<a href="./README.md">🇺🇸 English</a> | <a href="./docs/tr/README.md">🇹🇷 Türkçe</a> | <a href="./docs/de/README.md">🇩🇪 Deutsch</a> | <a href="./docs/es/README.md">🇪🇸 Español</a> | <a href="./docs/fr/README.md">🇫🇷 Français</a> | <a href="./docs/ru/README.md">🇷🇺 Русский</a> | <a href="./docs/zh-CN/README.md">🇨🇳 中文</a>
+<a href="../../README.md">🇺🇸 English</a> | <a href="./README.md">🇹🇷 Türkçe</a> | <a href="../de/README.md">🇩🇪 Deutsch</a> | <a href="../es/README.md">🇪🇸 Español</a> | <a href="../fr/README.md">🇫🇷 Français</a> | <a href="../ru/README.md">🇷🇺 Русский</a> | <a href="../zh-CN/README.md">🇨🇳 中文</a>
 
 </div>
 
 <p align="center">
-  <img src="./assets/images/banner.jpg" alt="Embedded AI Vision Glass in Action">
+  <!-- Seçtiğin ana fotoğrafın yolu buraya gelecek -->
+  <img src="../../assets/images/banner.jpg" alt="Engelsiz Görü Gözlüğü Projesi">
 </p>
 
-| **Project Summary** |
+| **Proje Özeti** |
 | :---: |
-| This project documents the journey of a high school student who single-handedly designed, built, and coded an AI-powered smart glass prototype from scratch, using personal funds. The "Embedded AI Vision Glass" (EGG) is an award-winning assistive device created to enhance the independence of visually impaired individuals by interpreting their environment. It transforms the abstract concept of sight into tangible information through object recognition, text-to-speech, and live translation. |
+| Bu proje, bir lise öğrencisinin tamamen kişisel imkanlarıyla, sıfırdan tasarlayıp kodladığı yapay zeka destekli bir akıllı gözlük prototipinin yolculuğunu belgelemektedir. "Engelsiz Görü Gözlüğü" (EGG), çevresini yorumlayarak görme engelli bireylerin bağımsızlığını artırmak amacıyla oluşturulmuş, ödüllü bir yardımcı cihazdır. Soyut "görme" kavramını; nesne tanıma, metinden sese ve canlı çeviri gibi özelliklerle somut bilgiye dönüştürür. |
 
-This repository serves as a comprehensive technical archive for the EGG project, detailing its entire lifecycle. It is designed as a portfolio showcase and a reference for those interested in embedded systems, IoT, and applied AI.
+Bu repo, EGG projesinin ilk konseptinden yarışmada ödül kazanan prototipine kadar tüm yaşam döngüsünü detaylandıran kapsamlı bir teknik arşiv niteliğindedir. Hem bir portfolyo vitrini hem de gömülü sistemler, IoT ve uygulamalı yapay zeka ile ilgilenenler için bir referans olarak tasarlanmıştır.
 
-**Disclaimer:** The source code and design files in this repository are provided for demonstration purposes only. All rights are reserved, and this project is **not open-source**.
+**Yasal Uyarı:** Bu repodaki kaynak kodları ve tasarım dosyaları yalnızca gösterim amaçlıdır. Tüm hakları saklıdır ve bu proje **açık kaynak değildir**.
 
 ---
 
-## Project Outline
+## Proje Taslağı
 
-This project chronicles the creation of the EGG in 5 main chapters, each detailed in its respective document:
+Bu proje, EGG'nin yaratılış sürecini 5 ana bölümde anlatmaktadır. Her bölüm, linki verilen kendi dokümanında detaylandırılmıştır:
 
-*   **[Chapter I: The Idea and The "Why"](./5_Project_Documentation/1_The_Idea_and_The_Why.md)**
-    The motivation behind the project and the vision for creating a true cognitive sight experience.
+*   **[Bölüm I: Fikir ve "Neden?"](../../5_Project_Documentation/1_The_Idea_and_The_Why.md)**
+    Projenin arkasındaki motivasyon ve basit bir engel tespitinin ötesinde, gerçek bir bilişsel "görü" deneyimi yaratma vizyonu.
 
-*   **[Chapter II: Hardware Architecture & Assembly](./5_Project_Documentation/2_Hardware_Architecture.md)**
-    A deep dive into the hardware decisions, including the **Dual-MCU Architecture**, power management system, and hands-on assembly process.
+*   **[Bölüm II: Donanım Mimarisi ve Montaj](../../5_Project_Documentation/2_Hardware_Architecture.md)**
+    **Çift Mikrodenetleyici Mimarisi**, güç yönetimi sistemi ve modifiye edilmiş BT kulaklık gibi donanım kararlarının ve el yapımı montaj sürecinin derinlemesine incelenmesi.
 
-*   **[Chapter III: The Software Ecosystem](./5_Project_Documentation/3_Software_Ecosystem.md)**
-    An explanation of the three-tiered software structure: **Firmware** (Embedded C++), **Cloud Backend** (AWS Serverless), and the **Mobile Application** (Android).
+*   **[Bölüm III: Yazılım Ekosistemi](../../5_Project_Documentation/3_Software_Ecosystem.md)**
+    Gözlüğü hayata geçiren üç katmanlı yazılım yapısının açıklaması: **Gömülü Yazılım** (C++), **Bulut Altyapısı** (AWS Serverless) ve **Mobil Uygulama** (Android).
 
-*   **[Chapter IV: Capabilities and Live Demos](./5_Project_Documentation/4_Capabilities_and_Demos.md)**
-    A showcase of what the EGG can do, with details on **AI-Powered Vision** (OCR, Object Detection), user interface, and connectivity modes.
+*   **[Bölüm IV: Yetenekler ve Canlı Demolar](../../5_Project_Documentation/4_Capabilities_and_Demos.md)**
+    EGG'nin yapabildiklerinin bir vitrini. **Yapay Zeka Destekli Görü** (OCR, Nesne Tanıma), dinamik dokunmatik arayüz ve bağlantı modları hakkında detaylar.
 
-*   **[Chapter V: Competitions, Challenges, and Learnings](./5_Project_Documentation/5_Competitions_and_Learnings.md)**
-    Reflections on the journey, including winning 3rd place at an international robotics competition, feedback from TEKNOFEST judges, and the lessons learned.
+*   **[Bölüm V: Yarışmalar, Zorluklar ve Öğrenimler](../../5_Project_Documentation/5_Competitions_and_Learnings.md)**
+    Uluslararası bir robotik yarışmasında üçüncülük kazanmak, TEKNOFEST jürilerinden alınan geri bildirimler, aşılan teknik zorluklar ve bu yolculukta kazanılan dersler üzerine düşünceler.
 
-## 🖼️ Project Showcase
+## 🖼️ Proje Vitrini
 
-| 1. Prototyping & Assembly | 2. Competition & Recognition | 3. Live Demonstration |
+| 1. Prototipleme ve Montaj | 2. Yarışma ve Başarı | 3. Canlı Demo |
 | :---: | :---: | :---: |
-| _The "bare-metal" prototype, showing the hand-assembled and custom-wired modules._ | _Receiving the 3rd place award in the AI category at the Sivas International Robotics Competition._ | _A live test of the voice-activated flashlight, a core capability of the onboard assistant._ |
-| <img src="./5_Project_Documentation/Media/1_Prototyping_and_Assembly/esp32wroower-ic-tarafi-motor-bt-montajlanmis.png" width="250"> | <img src="./5_Project_Documentation/Media/2_Competition_and_Awards/award-pose.jpeg" width="250"> | <img src="./5_Project_Documentation/Media/3_Demos_and_Presentations/assistant-test.mp4" width="250"> |
+| _"Çıplak" prototipin ilk halleri; modifiye edilmiş BT kulaklık ve özel kablolanmış modüllerin montajı._ | _Sivas Uluslararası Robot Yarışması'nda Yapay Zeka kategorisinde kazanılan üçüncülük ödülü._ | _Dahili asistanın temel yeteneklerinden biri olan sesle etkinleştirilen fener özelliğinin canlı testi._ |
+| <img src="../../5_Project_Documentation/Media/1_Prototyping_and_Assembly/esp32wroower-ic-tarafi-motor-bt-montajlanmis.png" width="250"> | <img src="../../5_Project_Documentation/Media/2_Competition_and_Awards/award-pose.jpeg" width="250"> | <img src="../../5_Project_Documentation/Media/3_Demos_and_Presentations/assistant-test.mp4" width="250"> |
 
 
 ---
 
-## ⚖️ Copyright and License
+## ⚖️ Telif Hakkı ve Lisans
 
-**© 2024, Şems YEKELER. All Rights Reserved.**
+**© 2024, Şems YEKELER. Her Hakkı Saklıdır.**
