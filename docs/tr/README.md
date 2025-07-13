@@ -12,7 +12,7 @@
 <p align="center">
   <img src="../../5_Project_Documentation/Media/2_Competition_and_Awards/award-pose.jpeg" alt="Yarışma Başarısı" width="48%">
   
-  <img src="../../5_Project_Documentation/Media/IMG_20241210_144922_587.jpg" alt="İlk Prototip" width="47.7%">
+  <img src="../../5_Project_Documentation/Media/IMG_20241210_144922_587.jpg" alt="İlk Prototip" width="47.6%">
   
 </p>
 
