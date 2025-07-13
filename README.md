@@ -1,51 +1,75 @@
+<!-- Diğer dillere link (şimdilik sadece İngilizce var) -->
+[Read the English Version (İngilizce Versiyonu Okuyun) »](README.md)
+
+---
+
 <div align="center">
+  <!-- Proje Banner'ı (Bu linki daha sonra kendi yüklediğin resimle değiştireceksin) -->
+  <img src="https://i.imgur.com/Kq8Xq7l.jpg" alt="Proje Banner" width="750">
 
-**Languages**
+  <h1 align="center">Gömülü Yapay Zeka Görü Gözlüğü (EGG)</h1>
 
-<a href="README.md">🇺🇸 English</a> | <a href="README_tr.md">🇹🇷 Türkçe</a> | <a href="README_de.md">🇩🇪 Deutsch</a> | <a href="README_es.md">🇪🇸 Español</a> | <a href="README_fr.md">🇫🇷 Français</a> 
-
+  <p align="center">
+    Görme engelli bireylere yardımcı olmak amacıyla bir lise öğrencisi tarafından geliştirilen, ödüllü ve yapay zeka destekli bir akıllı gözlük projesinin portfolyo sunumudur.
+    <br />
+    <a href="#-proje-hakkında"><strong>Proje Hakkında</strong></a> ·
+    <a href="#-teknik-mimari"><strong>Teknik Mimari</strong></a> ·
+    <a href="#-proje-vitrini"><strong>Proje Vitrini</strong></a>
+  </p>
 </div>
 
-<h1 align="center">Embedded AI Vision Glass (EGG)</h1>
+---
 
+### 🏆 Proje Hakkında
+
+**Gömülü Yapay Zeka Görü Gözlüğü (EGG)**, görme engelli bireylerin günlük hayatta karşılaştığı zorluklara çözüm üretmek amacıyla, tek bir lise öğrencisi tarafından tamamen kişisel imkanlarla tasarlanıp geliştirilmiş, ileri teknoloji bir yardımcı prototiptir.
+
+Bu proje, geleneksel yardımcı cihazların aksine, sadece engelleri tespit etmekle kalmaz, aynı zamanda kullanıcının çevresini **anlamlandırır ve betimler**. Sadece bir uyarı sesi vermek yerine, "önünde bir sandalye var" diyebilir veya bir tabeladaki yazıyı sesli olarak okuyabilir. Bu sayede, bilişsel bir "görme" yeteneği sunarak kullanıcının bağımsızlığını artırmayı hedefler.
+
+Projenin yenilikçi yapısı ve potansiyeli, katıldığı **Sivas Uluslararası Robot Yarışması**'nda **Yapay Zeka Kategorisi Üçüncülük Ödülü** alarak bağımsız bir jüri tarafından tescillenmiştir.
+
+### 🛠️ Teknik Mimari
+
+Proje; donanım, gömülü yazılım, bulut altyapısı ve mobil uygulamayı kapsayan tam kapsamlı (full-stack) bir çözümdür.
+
+<!-- Mimari Şeması (Bu linki daha sonra kendi yüklediğin notlu şema ile değiştireceksin) -->
 <p align="center">
-  <img src="5_Project_Documentation/Media/showcase_banner.jpg" width="700">
+  <img src="https://i.imgur.com/8Fk7oA3.jpg" width="100%">
 </p>
 
-| **Project Summary** |
-| :---: |
-| An award-winning, AI-powered smart glass prototype, single-handedly developed by a high school student. This project aims to enhance the daily lives of visually impaired individuals by providing them with a cognitive sense of sight. It can read text, recognize objects, identify currency, and describe the user's surroundings, all managed through a multi-layered system of embedded hardware, cloud AI, and a mobile application. |
+*   **Donanım ve Gömülü Yazılım:** Görevleri verimli bir şekilde dağıtan **çift mikrodenetleyicili (ESP-WROOM-32 + ESP32-CAM)** bir mimariye sahiptir. Ana kontrolcü arayüz ve Bluetooth'u yönetirken, özel işlemci kamera, Wi-Fi ve yapay zeka ile ilgili görevleri üstlenir. İki işlemci UART üzerinden haberleşir. Bu mimari, tek bir işlemcinin Wi-Fi ve Bluetooth'u aynı anda kullanırken yaşadığı performans sorunlarını çözmek için özel olarak tasarlanmıştır.
 
-This repository documents the entire journey of the **Embedded AI Vision Glass (EGG)**, from the initial concept and hardware design to the development of its complex, three-tiered software architecture.
+*   **Sunucu Altyapısı (Bulut):** Maliyeti ve cihaz üzerindeki işlem yükünü en aza indirmek için **AWS (Amazon Web Services)** üzerinde "sunucusuz" (serverless) bir mimari kullanılmıştır. Tüm ağır yapay zeka işlemleri (Metin Okuma, Nesne Tanıma vb.) bulutta yapılır.
+    *   **Kullanılan Servisler:** API Gateway, Lambda, S3, AWS Textract, AWS Rekognition.
 
-This project stands as a portfolio piece to showcase skills in hardware engineering, embedded systems, cloud architecture, and mobile development. The source code and design files are provided for viewing and educational purposes only.
+*   **Mobil Uygulama (Android):** Gözlüğü kontrol etmek, komut göndermek ve işlenen sonuçları sesli olarak almak için geliştirilmiş kullanıcı dostu bir arayüzdür. Bluetooth ve internet üzerinden gözlükle ve sunucuyla sürekli iletişim halindedir.
 
----
+### 🌟 Temel Yetenekler
 
-## Project Outline: The Story of EGG
+*   **Metin Analizi (OCR):** Doküman, tabela ve etiketlerdeki metinleri okur.
+*   **Canlı Metin Çevirisi:** Yabancı dildeki bir metni okur, Türkçeye çevirir ve seslendirir.
+*   **Ortam Betimleme:** Çevredeki nesneleri tanır ve kullanıcıya raporlar.
+*   **Para ve Yüz Tanıma:** Kağıt paraları ve önceden kaydedilmiş kişileri tanır.
+*   **Çift Kontrol Sistemi:** Hem gözlük üzerindeki kapasitif dokunmatik yüzeylerle hem de mobil uygulama üzerinden sesli komutlarla kontrol edilebilir.
+*   **Ek Modlar:** Canlı Video Yayını (WebSocket üzerinden) ve FTP Sunucu Modu (SD karttaki dosyalara kablosuz erişim).
 
-This project is chronicled in 4 main chapters, detailing its technical evolution.
+### 🖼️ Proje Vitrini: Fikirden Ödüle Yolculuk
 
-### **Chapter I: The Architecture - A Dual-Brain Design**
-This section details the core engineering decision to use a dual-MCU architecture to overcome performance bottlenecks. The **ESP-WROOM-32** acts as the main controller for UI and Bluetooth, while a dedicated **ESP32-CAM** handles all intensive camera, Wi-Fi, and AI-related tasks. The two are orchestrated via UART communication.
-*   **See the full annotated schematic in:** `1_Hardware_Design/Schematics/`
+Bu repo, projenin gelişim sürecini ve sonucunu sergilemek amacıyla oluşturulmuştur.
 
-### **Chapter II: The Cloud - The AI Core**
-The "intelligence" of the glasses resides in the cloud. This section explains how a serverless architecture on **AWS** (API Gateway, Lambda, S3) is used to trigger powerful AI services like **Amazon Rekognition** (for object/face/currency detection) and **Amazon Textract** (for OCR). This approach keeps the device lightweight and cost-effective.
-*   **Review the Lambda function code in:** `3_Cloud_Backend/AWS_Lambda_Function/`
+| 1. İlk Prototipleme ve Montaj | 2. Yarışma ve Başarı | 3. Canlı Demo |
+| :---: | :---: | :---: |
+| _BT kulaklık modifikasyonu ve özel kablolama dahil, tüm bileşenlerin elle birleştirilmesi._ | _EGG projesinin Sivas Uluslararası Robot Yarışması'nda sunulması ve Yapay Zeka kategorisinde üçüncülük ödülü._ | _Dahili asistanın temel bir yeteneği olan sesle etkinleştirilen fener özelliğini gösteren canlı bir test._ |
+| <!-- Resim 1 Linki --> <img src="https://i.imgur.com/j1v2X4i.png" width="250"> | <!-- Resim 2 Linki --> <img src="https://i.imgur.com/J3tG5d9.jpg" width="250"> | <!-- Video/GIF Linki --> <video src="https://i.imgur.com/L12s9pP.mp4" width="250"></video> |
 
-### **Chapter III: The Interface - User Interaction**
-This chapter covers both the physical and digital interfaces. The glasses feature a dynamic, gesture-based control system using **dual capacitive touchpads**. A custom **Android application** provides an alternative control method, a display for results, and integrates a Text-to-Speech (TTS) engine and the **Google Translate API** for a seamless user experience.
-*   **Explore the Android source code in:** `4_Mobile_Application/Source_Code_Android/`
-
-### **Chapter IV: The Journey - From a Room to the Stage**
-This is not just a theoretical project. EGG was physically built, tested, and successfully competed in the **Sivas International Robotics Competition**, winning the **3rd Place Award** in the highly competitive **Artificial Intelligence Category**. This chapter showcases the prototyping process, the competition experience, and the awards won.
-*   **See all photos and videos in:** `5_Project_Documentation/Media/`
+*Bu repodaki dosyalar yalnızca inceleme ve gösterim amaçlıdır.*
 
 ---
 
-## ⚖️ Copyright and License
+### ⚖️ Telif Hakkı ve Lisans
 
-**© 2024, [ŞEMS YEKELER]. All Rights Reserved.**
+**© 2024, [SENİN ADIN SOYADIN]. Her Hakkı Saklıdır.**
 
-The contents of this repository are provided for demonstration purposes only. You are not permitted to copy, modify, distribute, or use them in any way without explicit written permission. This project is **NOT** open-source.
+Bu projenin kaynak kodları, donanım şemaları ve diğer tüm varlıkları yalnızca portfolyo ve gösterim amacıyla sunulmuştur. Kodları eğitim amacıyla inceleyebilirsiniz, ancak yazarın açık ve yazılı izni olmaksızın kopyalamanız, değiştirmeniz, dağıtmanız veya herhangi bir şekilde kullanmanız yasaktır.
+
+**Bu proje açık kaynak değildir.**
