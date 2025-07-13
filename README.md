@@ -8,9 +8,10 @@
 
 </div>
 
+<!-- ANA GÖRSEL: İLK PROTOTİP ve BAŞARI YAN YANA -->
 <p align="center">
-  <!-- Seçtiğin ana fotoğrafın yolu buraya gelecek -->
-  <img src="../../assets/images/banner.jpg" alt="Engelsiz Görü Gözlüğü Projesi">
+  <img src="../../5_Project_Documentation/Reports_and_Presentations/ilk prototip.jpg" alt="İlk Prototip" width="48%">
+  <img src="../../5_Project_Documentation/Media/2_Competition_and_Awards/award-pose.jpeg" alt="Yarışma Başarısı" width="48%">
 </p>
 
 | **Proje Özeti** |
@@ -42,12 +43,24 @@ Bu proje, EGG'nin yaratılış sürecini 5 ana bölümde anlatmaktadır. Her bö
 *   **[Bölüm V: Yarışmalar, Zorluklar ve Öğrenimler](../../5_Project_Documentation/5_Competitions_and_Learnings.md)**
     Uluslararası bir robotik yarışmasında üçüncülük kazanmak, TEKNOFEST jürilerinden alınan geri bildirimler, aşılan teknik zorluklar ve bu yolculukta kazanılan dersler üzerine düşünceler.
 
-## 🖼️ Proje Vitrini
+## 🛠️ Teknik Mimari
 
-| 1. Prototipleme ve Montaj | 2. Yarışma ve Başarı | 3. Canlı Demo |
+EGG projesi, üç katmanlı bir mimariye sahip tam kapsamlı bir IoT çözümüdür.
+
+<p align="center">
+  <a href="../../1_Hardware_Design/gozluk-sema-noted.jpg"><img src="../../1_Hardware_Design/gozluk-sema-noted.jpg" alt="Açıklamalı Devre Şeması" width="100%"></a>
+  <br>
+  <em>Notlu şemanın tamamını görmek için resme tıklayın.</em>
+</p>
+
+## 🖼️ Proje Vitrini: Fikirden Ödüle Yolculuk
+
+Bu proje, bir fikrin somut bir prototipe ve ardından ödüllü bir çalışmaya dönüşme hikayesidir.
+
+| 1. "Çıplak" Prototip | 2. Ödüller | 3. Canlı Demo |
 | :---: | :---: | :---: |
-| _"Çıplak" prototipin ilk halleri; modifiye edilmiş BT kulaklık ve özel kablolanmış modüllerin montajı._ | _Sivas Uluslararası Robot Yarışması'nda Yapay Zeka kategorisinde kazanılan üçüncülük ödülü._ | _Dahili asistanın temel yeteneklerinden biri olan sesle etkinleştirilen fener özelliğinin canlı testi._ |
-| <img src="../../5_Project_Documentation/Media/1_Prototyping_and_Assembly/esp32wroower-ic-tarafi-motor-bt-montajlanmis.png" width="250"> | <img src="../../5_Project_Documentation/Media/2_Competition_and_Awards/award-pose.jpeg" width="250"> | <img src="../../5_Project_Documentation/Media/3_Demos_and_Presentations/assistant-test.mp4" width="250"> |
+| _Tüm bileşenlerin elle birleştirildiği, bantlarla sabitlendiği ve henüz bir kasası olmayan ilk işlevsel versiyon._ | _Sivas Uluslararası Robot Yarışması'nda Yapay Zeka ve Tematik Robot kategorilerinde kazanılan dereceler._ | _Dahili asistanın temel yeteneklerinden biri olan sesle etkinleştirilen fener özelliğinin canlı testi._ |
+| <a href="../../5_Project_Documentation/Media/1_Prototyping_and_Assembly/esp32wroower-ic-tarafi-motor-bt-montajlanmis.png"><img src="../../5_Project_Documentation/Media/1_Prototyping_and_Assembly/esp32wroower-ic-tarafi-motor-bt-montajlanmis.png" width="250" alt="Montaj Aşaması"></a> | <a href="../../5_Project_Documentation/Media/2_Competition_and_Awards/our-team-medals.jpg"><img src="../../5_Project_Documentation/Media/2_Competition_and_Awards/our-team-medals.jpg" width="250" alt="Kazanılan Ödüller"></a> | <a href="../../5_Project_Documentation/Media/3_Demos_and_Presentations/assistant-test.mp4"><img src="../../5_Project_Documentation/Media/3_Demos_and_Presentations/assistant-test.mp4" width="250" alt="Canlı Demo"></a> |
 
 
 ---
@@ -55,3 +68,7 @@ Bu proje, EGG'nin yaratılış sürecini 5 ana bölümde anlatmaktadır. Her bö
 ## ⚖️ Telif Hakkı ve Lisans
 
 **© 2024, Şems YEKELER. Her Hakkı Saklıdır.**
+
+Bu projenin kaynak kodları, donanım şemaları ve diğer tüm varlıkları yalnızca portfolyo ve gösterim amacıyla sunulmuştur. Kodları eğitim amacıyla inceleyebilirsiniz, ancak yazarın açık ve yazılı izni olmaksızın kopyalamanız, değiştirmeniz, dağıtmanız veya herhangi bir şekilde kullanmanız yasaktır.
+
+**Bu proje açık kaynak değildir.**
