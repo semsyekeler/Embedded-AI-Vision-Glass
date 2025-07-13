@@ -1,0 +1,4 @@
+{
+  "amac": "$input.params('amac')",
+  "base64Image": "$util.base64Encode($input.body)"
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EGG - Canlı Yayın</title>
+    <style>
+        body { background-color: #222; margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        img { border: 2px solid #555; background-color: #000; }
+    </style>
+</head>
+<body>
+    <img id="live-stream-image" alt="Yayın bekleniyor...">
+
+    <script>
+        const img = document.getElementById('live-stream-image');
+        
+        // !!! DEĞİŞTİRİLECEK: Buraya EC2 sunucunuzun genel IP adresini yazın.
+        const WS_URL = 'ws://<SENIN-EC2-IP-ADRESIN>:65080'; 
+        
+        let urlObject;
+
+        function connect() {
+            const ws = new WebSocket(WS_URL);
+
+            ws.onopen = () => {
+                console.log(`WebSocket sunucusuna bağlandı: ${WS_URL}`);
+                img.alt = "Gözlükten yayın bekleniyor...";
+            };
+
+            ws.onmessage = (message) => {
+                // Gelen binary veriyi bir Blob'a çevirip URL oluştur
+                if (urlObject) {
+                    URL.revokeObjectURL(urlObject); // Eski URL'i hafızadan temizle
+                }
+                urlObject = URL.createObjectURL(new Blob([message.data]));
+                img.src = urlObject;
+            };
+
+            ws.onclose = () => {
+                console.log('Bağlantı kesildi. 5 saniye içinde tekrar deneniyor...');
+                img.alt = "Bağlantı kesildi. Tekrar deneniyor...";
+                setTimeout(connect, 5000); // 5 saniye sonra tekrar bağlanmayı dene
+            };
+
+            ws.onerror = (error) => {
+                console.error('WebSocket hatası:', error);
+                ws.close();
+            };
+        }
+
+        connect(); // Bağlantıyı başlat
+    </script>
+</body>
+</html>
