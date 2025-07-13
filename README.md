@@ -46,6 +46,6 @@ This is not just a theoretical project. EGG was physically built, tested, and su
 
 ## ⚖️ Copyright and License
 
-**© 2024, [SENİN ADIN SOYADIN]. All Rights Reserved.**
+**© 2024, [ŞEMS YEKELER]. All Rights Reserved.**
 
 The contents of this repository are provided for demonstration purposes only. You are not permitted to copy, modify, distribute, or use them in any way without explicit written permission. This project is **NOT** open-source.
