@@ -1,58 +1,51 @@
 <div align="center">
-  <h1 align="center">Embedded AI Vision Glass (EGG)</h1>
-  <p align="center">
-    An award-winning personal project showcasing an embedded AI computer vision system in the form of smart glasses to assist visually impaired individuals.
-    <br />
-    <a href="README_tr.md"><strong>Read The Turkish Version (Türkçe Versiyonu Okuyun) »</strong></a>
-    <br />
-    <br />
-    <a href="#-about-the-project">About The Project</a>
-    ·
-    <a href="#-technical-architecture">Architecture</a>
-    ·
-    <a href="#-project-showcase">Showcase</a>
-  </p>
+
+**Languages**
+
+<a href="README.md">🇺🇸 English</a> | <a href="README_tr.md">🇹🇷 Türkçe</a> | <a href="README_de.md">🇩🇪 Deutsch</a> | <a href="README_es.md">🇪🇸 Español</a> | <a href="README_fr.md">🇫🇷 Français</a> 
+
 </div>
 
----
+<h1 align="center">Embedded AI Vision Glass (EGG)</h1>
 
-### 🏆 About The Project
+<p align="center">
+  <img src="5_Project_Documentation/Media/showcase_banner.jpg" width="700">
+</p>
 
-The **Embedded AI Vision Glass (EGG)** is a sophisticated assistive technology prototype, single-handedly designed and developed by a high school student using personal funds. It aims to solve real-world challenges faced by visually impaired individuals by leveraging the power of IoT, cloud computing, and artificial intelligence.
+| **Project Summary** |
+| :---: |
+| An award-winning, AI-powered smart glass prototype, single-handedly developed by a high school student. This project aims to enhance the daily lives of visually impaired individuals by providing them with a cognitive sense of sight. It can read text, recognize objects, identify currency, and describe the user's surroundings, all managed through a multi-layered system of embedded hardware, cloud AI, and a mobile application. |
 
-Unlike conventional assistive devices that only detect obstacles, EGG is designed to **interpret and describe the user's environment**. Instead of just a beep, it can describe "there is a chair in front of you" or read the text on a sign, effectively providing a cognitive sense of "sight."
+This repository documents the entire journey of the **Embedded AI Vision Glass (EGG)**, from the initial concept and hardware design to the development of its complex, three-tiered software architecture.
 
-This project's innovation and potential were recognized at the **Sivas International Robotics Competition**, where it won the **3rd Place Award in the Artificial Intelligence Category**.
-
-### 🛠️ Technical Architecture
-
-This project is a full-stack solution, encompassing hardware, embedded software, cloud infrastructure, and a mobile application.
-
-*   **Hardware & Embedded:** A dual-MCU architecture (ESP-WROOM-32 + ESP32-CAM) distributes tasks efficiently. The main controller handles UI and Bluetooth, while a dedicated processor manages camera, Wi-Fi, and AI-related tasks. The two communicate via UART.
-*   **Cloud Backend:** A serverless architecture on AWS (API Gateway, Lambda, S3, Rekognition, Textract) performs all heavy AI processing to minimize cost and device load.
-*   **Mobile App (Android):** A user-friendly interface to control the glasses, send commands, and receive real-time results via Bluetooth and Firebase. It utilizes a Text-to-Speech (TTS) engine and the Google Translate API for multilingual support.
-
-### 🌟 Key Features
-
-*   **Text Analysis (OCR):** Reads text from documents and signs.
-*   **Live Text Translation:** Translates and reads foreign text.
-*   **Scene Description:** Identifies objects in the user's surroundings.
-*   **Currency & Face Recognition:** Identifies banknotes and pre-registered individuals.
-*   **Dual Control:** Controlled via on-board touchpads or voice commands through the app.
-*   **Live Video Streaming & FTP Server Mode.**
-
-### 🖼️ Project Showcase
-
-This repository is for portfolio and demonstration purposes. You can browse the project files to see the schematics and source code.
-
-*The files in this repository are provided for viewing and demonstration only.*
+This project stands as a portfolio piece to showcase skills in hardware engineering, embedded systems, cloud architecture, and mobile development. The source code and design files are provided for viewing and educational purposes only.
 
 ---
 
-### ⚖️ Copyright and License
+## Project Outline: The Story of EGG
+
+This project is chronicled in 4 main chapters, detailing its technical evolution.
+
+### **Chapter I: The Architecture - A Dual-Brain Design**
+This section details the core engineering decision to use a dual-MCU architecture to overcome performance bottlenecks. The **ESP-WROOM-32** acts as the main controller for UI and Bluetooth, while a dedicated **ESP32-CAM** handles all intensive camera, Wi-Fi, and AI-related tasks. The two are orchestrated via UART communication.
+*   **See the full annotated schematic in:** `1_Hardware_Design/Schematics/`
+
+### **Chapter II: The Cloud - The AI Core**
+The "intelligence" of the glasses resides in the cloud. This section explains how a serverless architecture on **AWS** (API Gateway, Lambda, S3) is used to trigger powerful AI services like **Amazon Rekognition** (for object/face/currency detection) and **Amazon Textract** (for OCR). This approach keeps the device lightweight and cost-effective.
+*   **Review the Lambda function code in:** `3_Cloud_Backend/AWS_Lambda_Function/`
+
+### **Chapter III: The Interface - User Interaction**
+This chapter covers both the physical and digital interfaces. The glasses feature a dynamic, gesture-based control system using **dual capacitive touchpads**. A custom **Android application** provides an alternative control method, a display for results, and integrates a Text-to-Speech (TTS) engine and the **Google Translate API** for a seamless user experience.
+*   **Explore the Android source code in:** `4_Mobile_Application/Source_Code_Android/`
+
+### **Chapter IV: The Journey - From a Room to the Stage**
+This is not just a theoretical project. EGG was physically built, tested, and successfully competed in the **Sivas International Robotics Competition**, winning the **3rd Place Award** in the highly competitive **Artificial Intelligence Category**. This chapter showcases the prototyping process, the competition experience, and the awards won.
+*   **See all photos and videos in:** `5_Project_Documentation/Media/`
+
+---
+
+## ⚖️ Copyright and License
 
 **© 2024, [SENİN ADIN SOYADIN]. All Rights Reserved.**
 
-The source code, hardware schematics, and all other assets of this project are provided for demonstration and portfolio purposes. You may view the code for educational purposes, but you are not permitted to copy, modify, distribute, or use them in any way without explicit written permission from the author.
-
-**This project is NOT open-source.**
+The contents of this repository are provided for demonstration purposes only. You are not permitted to copy, modify, distribute, or use them in any way without explicit written permission. This project is **NOT** open-source.
