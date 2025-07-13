@@ -8,66 +8,59 @@
 
 </div>
 
-<!-- ANA GÖRSEL: İLK PROTOTİP ve BAŞARI YAN YANA -->
+<!-- ANA GÖRSEL: İLK PROTOTİP ve BAŞARI YAN YANA, AÇIKLAMALARIYLA -->
 <p align="center">
-  <img src="../../5_Project_Documentation/Media/2_Competition_and_Awards/award-pose.jpeg" alt="Yarışma Başarısı" width="48%">
-  
-  <img src="../../5_Project_Documentation/Media/IMG_20241210_144922_587.jpg" alt="İlk Prototip" width="47.6%">
-  
+  <table>
+    <tr>
+      <td align="center" style="padding: 10px; border: none;">
+        <img src="../../5_Project_Documentation/Media/IMG_20241210_144922_587.jpg" alt="İlk Prototip" width="100%">
+        <br>
+        <em><b>Resim 1: Fikrin İlk Hali.</b> Elle lehimlenmiş modüller ve modifiye edilmiş bir gözlük çerçevesi ile hayata geçirilen ilk işlevsel prototip.</em>
+      </td>
+      <td align="center" style="padding: 10px; border: none;">
+        <img src="../../5_Project_Documentation/Media/2_Competition_and_Awards/award-pose.jpeg" alt="Yarışma Başarısı" width="100%">
+        <br>
+        <em><b>Resim 2: Emeğin Tescillenmesi.</b> Sivas Uluslararası Robot Yarışması'nda Yapay Zeka kategorisinde kazanılan üçüncülük ödülü.</em>
+      </td>
+    </tr>
+  </table>
 </p>
 
-| **Proje Özeti** |
-| :---: |
-| Bu proje, bir lise öğrencisinin tamamen kişisel imkanlarıyla, sıfırdan tasarlayıp kodladığı yapay zeka destekli bir akıllı gözlük prototipinin yolculuğunu belgelemektedir. "Engelsiz Görü Gözlüğü" (EGG), çevresini yorumlayarak görme engelli bireylerin bağımsızlığını artırmak amacıyla oluşturulmuş, ödüllü bir yardımcı cihazdır. Soyut "görme" kavramını; nesne tanıma, metinden sese ve canlı çeviri gibi özelliklerle somut bilgiye dönüştürür. |
+### Misyonumuz
 
-Bu repo, EGG projesinin ilk konseptinden yarışmada ödül kazanan prototipine kadar tüm yaşam döngüsünü detaylandıran kapsamlı bir teknik arşiv niteliğindedir. Hem bir portfolyo vitrini hem de gömülü sistemler, IoT ve uygulamalı yapay zeka ile ilgilenenler için bir referans olarak tasarlanmıştır.
+Bu proje, bir lise öğrencisinin, görme engelli bireylerin dünyayı algılama şeklini kökten değiştirmek amacıyla, tamamen kişisel imkanlarıyla sıfırdan hayata geçirdiği bir teknoloji manifestosudur. Misyonumuz, sadece "engel var" diyen bir cihaz değil, kullanıcıya **"önündeki tabelada 'acil çıkış' yazıyor"** diyebilen, çevresini **anlamlandıran ve betimleyen** bir yardımcı yaratmaktır. Bu vizyon, uluslararası bir yarışmada alınan derece ile tescillenmiştir.
 
-**Yasal Uyarı:** Bu repodaki kaynak kodları ve tasarım dosyaları yalnızca gösterim amaçlıdır. Tüm hakları saklıdır ve bu proje **açık kaynak değildir**.
+Bu repo, projenin tüm yaşam döngüsünü detaylandıran kapsamlı bir teknik arşivdir.
+
+**Yasal Uyarı:** Bu repodaki dosyalar yalnızca gösterim amaçlıdır. Tüm hakları saklıdır ve bu proje **açık kaynak değildir**.
 
 ---
 
-## Proje Taslağı
+### Proje Anatomisi ve Teknik Mimari
 
-Bu proje, EGG'nin yaratılış sürecini 5 ana bölümde anlatmaktadır. Her bölüm, linki verilen kendi dokümanında detaylandırılmıştır:
-
-*   **[Bölüm I: Fikir ve "Neden?"](../../5_Project_Documentation/1_The_Idea_and_The_Why.md)**
-    Projenin arkasındaki motivasyon ve basit bir engel tespitinin ötesinde, gerçek bir bilişsel "görü" deneyimi yaratma vizyonu.
-
-*   **[Bölüm II: Donanım Mimarisi ve Montaj](../../5_Project_Documentation/2_Hardware_Architecture.md)**
-    **Çift Mikrodenetleyici Mimarisi**, güç yönetimi sistemi ve modifiye edilmiş BT kulaklık gibi donanım kararlarının ve el yapımı montaj sürecinin derinlemesine incelenmesi.
-
-*   **[Bölüm III: Yazılım Ekosistemi](../../5_Project_Documentation/3_Software_Ecosystem.md)**
-    Gözlüğü hayata geçiren üç katmanlı yazılım yapısının açıklaması: **Gömülü Yazılım** (C++), **Bulut Altyapısı** (AWS Serverless) ve **Mobil Uygulama** (Android).
-
-*   **[Bölüm IV: Yetenekler ve Canlı Demolar](../../5_Project_Documentation/4_Capabilities_and_Demos.md)**
-    EGG'nin yapabildiklerinin bir vitrini. **Yapay Zeka Destekli Görü** (OCR, Nesne Tanıma), dinamik dokunmatik arayüz ve bağlantı modları hakkında detaylar.
-
-*   **[Bölüm V: Yarışmalar, Zorluklar ve Öğrenimler](../../5_Project_Documentation/5_Competitions_and_Learnings.md)**
-    Uluslararası bir robotik yarışmasında üçüncülük kazanmak, TEKNOFEST jürilerinden alınan geri bildirimler, aşılan teknik zorluklar ve bu yolculukta kazanılan dersler üzerine düşünceler.
-
-## 🛠️ Teknik Mimari
-
-EGG projesi, üç katmanlı bir mimariye sahip tam kapsamlı bir IoT çözümüdür.
+EGG projesi, donanım, gömülü yazılım, bulut ve mobil katmanları bir araya getiren tam kapsamlı bir IoT çözümüdür. Projenin teknik kararlarını ve yapısını aşağıdaki notlu şema özetlemektedir.
 
 <p align="center">
   <a href="../../1_Hardware_Design/gozluk-sema-noted.jpg"><img src="../../1_Hardware_Design/gozluk-sema-noted.jpg" alt="Açıklamalı Devre Şeması" width="100%"></a>
   <br>
-  <em>Notlu şemanın tamamını görmek için resme tıklayın.</em>
+  <em>Notlu ve detaylı devre şemasını tam boyutta görmek için resme tıklayın.</em>
 </p>
 
-## 🖼️ Proje Vitrini: Fikirden Ödüle Yolculuk
+*   **Donanım ve Gömülü Yazılım:** Görevleri verimli bir şekilde dağıtan **Çift Mikrodenetleyici Mimarisi** (ESP32 + ESP32-CAM) kullanılmıştır. Ana kontrolcü arayüz ve Bluetooth'u yönetirken, özel işlemci kamera ve Wi-Fi görevlerini üstlenir.
+*   **Sunucu Altyapısı (Bulut):** Tüm ağır yapay zeka işlemleri, maliyeti ve cihaz yükünü en aza indirmek için **AWS (Amazon Web Services)** üzerinde "sunucusuz" bir mimaride (Lambda, Textract, Rekognition) çalışır.
+*   **Mobil Uygulama (Android):** Gözlüğü kontrol etmek ve işlenen sonuçları sesli olarak almak için geliştirilmiş kullanıcı dostu bir arayüzdür.
 
-Bu proje, bir fikrin somut bir prototipe ve ardından ödüllü bir çalışmaya dönüşme hikayesidir.
+### Temel Yetenekler
 
-| 1. "Çıplak" Prototip | 2. Kazanılan Ödüller | 3. Canlı Demo (Video) |
-| :---: | :---: | :---: |
-| _Tüm bileşenlerin elle birleştirildiği ve henüz bir kasası olmayan ilk işlevsel versiyon._ | _Sivas Uluslararası Robot Yarışması'nda Yapay Zeka ve Tematik Robot kategorilerinde kazanılan dereceler._ | _Sesle etkinleştirilen fener özelliğinin canlı testi. (Oynatmak için resme tıklayın)_ |
-| <a href="../../5_Project_Documentation/Media/1_Prototyping_and_Assembly/esp32wrower-kismindan-yandan-bakis-cplk-montajli-hali-foto.png"><img src="../../5_Project_Documentation/Media/1_Prototyping_and_Assembly/esp32wrower-kismindan-yandan-bakis-cplk-montajli-hali-foto.png" width="250" alt="Montaj Aşaması"></a> | <a href="../../5_Project_Documentation/Media/2_Competition_and_Awards/our-team-medals.jpg"><img src="../../5_Project_Documentation/Media/2_Competition_and_Awards/our-team-medals.jpg" width="250" alt="Kazanılan Ödüller"></a> | <a href="https://www.youtube.com/watch?v=o3IA8lo6HuY"><img src="https://img.youtube.com/vi/o3IA8lo6HuY/1.jpg" alt="Canlı Demo Videosu" width="250"></a> |
-
+*   **Metin Analizi (OCR):** Doküman ve tabelalardaki metinleri okur.
+*   **Canlı Metin Çevirisi:** Yabancı metinleri çevirir ve seslendirir.
+*   **Ortam Betimleme:** Çevredeki nesneleri tanır ve raporlar.
+*   **Çift Kontrol Sistemi:** Hem gözlük üzerindeki dokunmatik yüzeyler hem de mobil uygulama üzerinden sesli komutlarla kontrol.
+*   **Ek Modlar:** Canlı Video Yayını (WebSocket) ve FTP Sunucu Modu (Kablosuz dosya erişimi).
 
 ---
 
-## ⚖️ Telif Hakkı ve Lisans
+### ⚖️ Telif Hakkı ve Lisans
 
 **© 2024, Şems YEKELER. Her Hakkı Saklıdır.**
 
