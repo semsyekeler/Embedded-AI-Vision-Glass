@@ -10,7 +10,7 @@
 
 <!-- ANA GÖRSEL: İLK PROTOTİP ve BAŞARI YAN YANA -->
 <p align="center">
-  <img src="../../5_Project_Documentation/Reports_and_Presentations/ilk prototip.jpg" alt="İlk Prototip" width="48%">
+  <img src="../../5_Project_Documentation/Media/1_Prototyping_and_Assembly/IMG_20241210_144922_587.jpg" alt="İlk Prototip" width="48%">
   <img src="../../5_Project_Documentation/Media/2_Competition_and_Awards/award-pose.jpeg" alt="Yarışma Başarısı" width="48%">
 </p>
 
@@ -57,10 +57,10 @@ EGG projesi, üç katmanlı bir mimariye sahip tam kapsamlı bir IoT çözümüd
 
 Bu proje, bir fikrin somut bir prototipe ve ardından ödüllü bir çalışmaya dönüşme hikayesidir.
 
-| 1. "Çıplak" Prototip | 2. Ödüller | 3. Canlı Demo |
+| 1. "Çıplak" Prototip | 2. Kazanılan Ödüller | 3. Canlı Demo (Video) |
 | :---: | :---: | :---: |
-| _Tüm bileşenlerin elle birleştirildiği, bantlarla sabitlendiği ve henüz bir kasası olmayan ilk işlevsel versiyon._ | _Sivas Uluslararası Robot Yarışması'nda Yapay Zeka ve Tematik Robot kategorilerinde kazanılan dereceler._ | _Dahili asistanın temel yeteneklerinden biri olan sesle etkinleştirilen fener özelliğinin canlı testi._ |
-| <a href="../../5_Project_Documentation/Media/1_Prototyping_and_Assembly/esp32wroower-ic-tarafi-motor-bt-montajlanmis.png"><img src="../../5_Project_Documentation/Media/1_Prototyping_and_Assembly/esp32wroower-ic-tarafi-motor-bt-montajlanmis.png" width="250" alt="Montaj Aşaması"></a> | <a href="../../5_Project_Documentation/Media/2_Competition_and_Awards/our-team-medals.jpg"><img src="../../5_Project_Documentation/Media/2_Competition_and_Awards/our-team-medals.jpg" width="250" alt="Kazanılan Ödüller"></a> | <a href="../../5_Project_Documentation/Media/3_Demos_and_Presentations/assistant-test.mp4"><img src="../../5_Project_Documentation/Media/3_Demos_and_Presentations/assistant-test.mp4" width="250" alt="Canlı Demo"></a> |
+| _Tüm bileşenlerin elle birleştirildiği ve henüz bir kasası olmayan ilk işlevsel versiyon._ | _Sivas Uluslararası Robot Yarışması'nda Yapay Zeka ve Tematik Robot kategorilerinde kazanılan dereceler._ | _Sesle etkinleştirilen fener özelliğinin canlı testi. (Oynatmak için resme tıklayın)_ |
+| <a href="../../5_Project_Documentation/Media/1_Prototyping_and_Assembly/esp32wrower-kismindan-yandan-bakis-cplk-montajli-hali-foto.png"><img src="../../5_Project_Documentation/Media/1_Prototyping_and_Assembly/esp32wrower-kismindan-yandan-bakis-cplk-montajli-hali-foto.png" width="250" alt="Montaj Aşaması"></a> | <a href="../../5_Project_Documentation/Media/2_Competition_and_Awards/our-team-medals.jpg"><img src="../../5_Project_Documentation/Media/2_Competition_and_Awards/our-team-medals.jpg" width="250" alt="Kazanılan Ödüller"></a> | <a href="https://www.youtube.com/watch?v=VIDEO_ID"><img src="https://img.youtube.com/vi/VIDEO_ID/0.jpg" alt="Canlı Demo Videosu" width="250"></a> |
 
 
 ---
